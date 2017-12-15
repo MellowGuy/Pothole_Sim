@@ -6,6 +6,8 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
 	public float maxDistanceDelta = 1f;
+	public float steeringSpeed = 1f;
+	public float xInputThrow;
 
 
 	// Use this for initialization
@@ -18,13 +20,26 @@ public class CarMovement : MonoBehaviour
 	void Update()
 	{
 		MoveCar();
-		Debug.Log("Car Position: " + transform.position);
-
 	}
 
 	private void MoveCar()
 	{
 
-		transform.position = Vector3.MoveTowards(transform.position, Input.mousePosition, maxDistanceDelta * Time.deltaTime);
+		/*
+		 * //probably uselsess
+		xInputThrow = Input.GetAxis("Horizontal");
+		Vector3 carXPositionTarget = new Vector3(xInputThrow, 0, 0) * steeringSpeed;
+		transform.position = Vector3.MoveTowards(transform.position, carXPositionTarget, maxDistanceDelta * Time.deltaTime);
+		*/
+
+		//if-elseif statements to get either left or right arror keys to move position left or right. 
+		if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			transform.position += Vector3.left * steeringSpeed * Time.deltaTime;
+		}
+		else if (Input.GetKey(KeyCode.RightArrow))
+		{
+			transform.position += Vector3.right * steeringSpeed * Time.deltaTime;
+		}
 	}
 }
