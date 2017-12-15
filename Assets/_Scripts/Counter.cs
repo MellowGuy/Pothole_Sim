@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Wheel : MonoBehaviour
+using UnityEngine.UI;
+public class Counter : MonoBehaviour
 {
+	int count = 0;
 
 	// Use this for initialization
 	void Start()
 	{
-
+		Text countText = GetComponent<Text>();
+		countText.text = "Count: " + count;
 	}
 
 	// Update is called once per frame
@@ -17,8 +19,8 @@ public class Wheel : MonoBehaviour
 
 	}
 
-	void OnTriggerEnter2D(Collider other)
+	public void AddToCounter()
 	{
-		Debug.LogWarning("Collider: " + other.name);
+		//adds 1 to counter.
 	}
 }
