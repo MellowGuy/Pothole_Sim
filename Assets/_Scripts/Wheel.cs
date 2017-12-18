@@ -24,6 +24,13 @@ public class Wheel : MonoBehaviour
 	{
 		print("Collider with: " + collision.name);
 		counter.Score(1);
+
+		WheelHit();
+	}
+
+	void WheelHit()
+	{
+		wheelHealth -= 1;
 	}
 
 	void OnDrawGizmos()
