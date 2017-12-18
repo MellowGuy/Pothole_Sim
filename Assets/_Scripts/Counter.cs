@@ -1,26 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class Counter : MonoBehaviour
 {
-	int count = 0;
+	public static int count = 0;
+	private Text myText;
 
-	// Use this for initialization
-	void Start()
+	//Initializes the score
+	private void Start()
 	{
-		Text countText = GetComponent<Text>();
-		countText.text = "Count: " + count;
+		myText = GetComponent<Text>();
+		myText.text = "Nonthing yet";
+		Reset();
 	}
 
-	// Update is called once per frame
-	void Update()
+	//add to score function
+	public void Score(int points)
 	{
-
+		count += points;
+		myText.text = "Counter: " + count.ToString();
 	}
 
-	public void AddToCounter()
+	//sets score to 0
+	public static void Reset()
 	{
-		//adds 1 to counter.
+		count = 0;
 	}
 }

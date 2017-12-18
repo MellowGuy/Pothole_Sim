@@ -25,8 +25,8 @@ public class CarMovement : MonoBehaviour
 	private void MoveCar()
 	{
 
-		/*
-		 * //probably uselsess
+		/***************************NEED CAR MOVMENT TO BE BETTER.*********************************
+		//probably uselsess
 		xInputThrow = Input.GetAxis("Horizontal");
 		Vector3 carXPositionTarget = new Vector3(xInputThrow, 0, 0) * steeringSpeed;
 		transform.position = Vector3.MoveTowards(transform.position, carXPositionTarget, maxDistanceDelta * Time.deltaTime);
